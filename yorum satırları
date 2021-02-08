@@ -1,0 +1,39 @@
+Merhabalar  öncelikle hoşgeldiniz burada sizlerle python derslerimizin ilk girişi olan ilk önce python kodlarımız arasında nasıl ufak açıklama tarzlarında 
+notları bırakabiliceğiz onları göstericeğim ve yorum satırlarının öneminden  bahsediyorum  
+python'da iki tip yorum satırı vardır ilki tek satır yorum  ve çoklu yorum satırı vardır.
+
+Tek satır yorum:
+Burada tek satır yorum yazmamızın sebebi yazdığımız kod dizilerini aslında amacını anlatmak ve hem başka kodu inceleyecek kişiler için hem de kendimiz için ufak
+notlar bırakmamıza yardımı dokunur ve bu da bizim kodlarımızın daha anlaşılabilir hale gelmesini sağlar. İleri de uzun satır kodlar yazıcak olursanız eğer 
+bu demek istediğimi çok iyi anlamış olursunuz ve en baştan temelden bunu alışkanlık edinirseniz ileride çok büyük size avantaj sağlar.
+
+Tek satır yorum bırakmak için # işaretini kullanırız hemen bir örnek ile açıklayım sizlere:
+
+#Bu bir Yorum satırıdır.
+print("Hello,World!")
+
+#Ekrana Hello World! Yazdırmak için kullanıyorum
+print("Hello, World!")
+
+şeklindedir.
+
+Çok satırlı yorum:
+
+Burada çok satırlı yorum aslında uzun bir açıklama yapmamız gerekiyorsa ve teker teker hepsinin başına # işaretini koymak uğraşıtırıcı bir hal alıcağı için
+çok satırlı yorumları kullanırız ve """(üç tane çift tırnak) ... """(üç tane çift tırnak) şeklinde başına koyarız ve aralarına istediğimiz yorumu yazabiliriz.
+
+Örnek olarak:
+
+""" Buraya 
+İstediğim kadar 
+yorum satırı yazabilirim"""
+print("Hello,World!")
+
+"""
+Buraya 
+istediğim kadar yorum
+bırakabilirim
+"""
+print("Hello,World!")
+
+İlk dersimizin dökümanları bu kadar bir sonraki dökümanda görüşmek üzere kendinize iyi bakın sağlıklı günler dilerim :):)
