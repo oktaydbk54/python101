@@ -1,0 +1,68 @@
+Merhabalar Python değişkenler dersinin dökümanlarına hoş geldiniz...
+
+Değişkenler: Python'da değişkenler aslında veri değerlerini depolamak için kullanırız. 
+Sizlere şöyle bir örnek ile açıklamak istiyorum mesela bir matematik sorusu çözüyorsunuz ve soru içerisinde verilen x değeri 5 olarak veriyor işte bu bir değişken 
+ataması örneğidir veya güncel olarak hayatımızda çoğu şeye verdiğimiz isim aslında bir değişken atamasıdır telefon ismi mesela çok fazla amaça ulaştığı için hepsini tek bir 
+isim çatısı altında toplamışızdır bu bir değişken atamasıdır.
+
+şimdi sizlerle birlikte bir kaç değişken örneği görelim.
+
+x = 5 #x'e 5 değerini yüklemiş oluyoruz.
+y = "John" #y değişkenine john ismini vermiş oluyoruz.
+
+print(x) #ekrana çıkan sonuç 5 olur
+print(y) #ekrana çıkan sonuç John olur.
+
+Python 3 tane değişken türü içerir bunlar String(str), İnteger sayı(int),Float sayı(float) şeklindedirler.
+
+String değişkeni: Yazı türündeki değerlerimizi eğer bir değişkene yüklüyorsak o değişkenin türü artık bir string değişkenidir.
+
+y = "John" #Bir string değişkeni türüdür.
+
+!!!Not!!! 
+String türünde değişkeni tanımlarken çift tırnak veya tek tırnak tanımlayabiliriz ama bir cümle yazıyorsak ve o cümlede ekstra bir alıntı yapıyorsak veya bir ayraç var ise
+tek tırnak ile o değişkeni yazmamız bize bir hata verir bu yüzden genel olarak string değişkenlerini atamasını yapıyorsak çift tırnak ile yazarız. Örneğin
+
+y = 'John'a bir tabak getirin' #HATA VERİR!!!
+
+y = "John'a bir tabak getirin" #HATA VERMEZ VE ÇALIŞIR...
+
+İnteger değişkeni: eğer bir değişkene tam bir sayı değeri veriyorsak o değişken artık bir integer değişken türü olmuştur.
+
+x = 5 #Bir integer değişken türüdür.
+
+Float değişkeni: eğer bir değişkene küsüratlı bir sayı değeri veriyorsak bu bir float türü değişken olmuştur.
+
+a = 5.2 #a değeri artık bir float türü olur.
+
+DEĞİŞKEN İSİMLERİ ATAMA KURALLARI:
+
+1-Değişken adı bir harf veya alt çizgi karakteri ile başlamalıdır.
+2-Bir değişken adı bir sayı ile başlayamaz.
+3-Bir değişken adı yalnızca alfa sayısal karakterler ve alt çizgiler (Az, 0-9 ve _) içerebilir.
+4-Değişken adları büyük / küçük harfe duyarlıdır (yaş, Yaş ve YAŞ üç farklı değişkendir).
+
+DEĞİŞKEN ATAMA KISA YOLLARI:
+
+İlk kısa yolumuz Python, tek bir satırda birden çok değişkene değer atamanıza izin verir.
+Örneğin:
+x, y, z = "Python", "Çok", "Kolay"
+print(x) #Python ekrana yazılır
+print(y) #Çok ekrana yazılır
+print(z) #Kolay ekrana yazılır
+
+İkinci kısa yolumuz birden çok değişkene bir değer vermek hemen bir örnekle göstermek istiyorum:
+
+x = y = z = "Python Çok kolay"
+print(x) #Python Çok kolay ekrana yazdırır.
+print(y) #Python Çok kolay ekrana yazdırır.
+print(z) #Python Çok kolay ekrana yazdırır.
+
+DEĞİŞKENLER DERSİ BU KADAR ARKADAŞLAR BİR SONRAKİ DERSTE GÖRÜŞMEK ÜZERE KENDİNİZE İYİ BAKIN İYİ GÜNLER DİLERİM :):)
+
+
+
+
+
+
+
