@@ -1,0 +1,82 @@
+Merhaba arkadaşlar bu dersimiz de sizlerle birlikte listeleri ve liste tipleri nelermiş onları öğreneceğiz...
+
+şimdi Pythonda 4 farklı liste tipi vardır. Bunlar sırasıyla şunlardır List,Tuple,Set ve Dictionary.
+
+List = elemanları sıralayabiliriz, güncelleme yapabiliriz ve tekrarlanabilir özelliği vardır.
+Tuple = elemanları sıralayabiliriz fakat güncelleme yapamayız maalesef :( ama tekrarlanabilir özelliği vardır.
+Set = elemanları sıralayamayız indexleme yapamayız ayrıca tekrarlama yapamayız.
+Dictionary = key ve value adında 2 değerden oluşur(anahtar kilit ilişkisi gibi) aynı bilgiyle birden fazla eleman olamaz.
+
+şimdi yukarıda ufak özet gibi az biraz neler olduğunu özelliklerini söyledim spoiler verdim :) şimdi biraz daha yakından incelemenin zamanı geldi List yani Listeden başlayalım.
+
+Liste:
+Listeler ile aslında stringler birbirlerine benzer diyebiliriz ortak özellikleri vardır mantık olarak şimdi size ilk önce liste tanımlama nasıl yapılır kod yazım dizimi nasıl onu gösterip
+sonrasında benzer özelliklerine bakalım örneklerle inceleyelim.
+
+liste tanımlama yaparken her bir farklı veri tipi değerler içerisinde olabilir.
+
+list1 = [1,2,3]
+list2 = ["one",2,True,3.14]
+
+gördüğünüz gibi liste bir sadece int değerler alırken list2 float string boolean int değerleri alabildi.
+ve eğer listeleri birleştirmek istersen aynı toplama işlemi gibi yapmamız yeterli olucaktır.
+
+list3 = list1 + list2 #list3 artık [1,2,3,"one",2,True,3.14] değerlerine sahip olmuş olur.
+
+listeler içerisinde ekstra listeler olabilir bunlara iç içe listeler veya çok boyutlu listeler adını verebiliriz.
+Örneğin:
+list4 = [[1,2,3],[4,5,6],[7,8,9],10] 
+
+dediğim gibi her türlü veri tipi içerisinde bulunabilir bakın list4 değişkeni ilk 3 elemanının tipi list son değeri int.
+
+!!NOT!! Elemanların sayısını eğer öğrenmek istersek kendimiz takip edemeyeceğimiz kadar uzun bir liste çıkarsa karşımıza len() fonksiyonunu kullanarak uzunluğunu hemen vericketir.
+list1 = [1,2,3]
+print(len(list1)) #ekrana list1'in uzunluğu 3 diye döndürür.
+
+şimdi hatırlarsanız eğer stringlerde istediğimiz değere ulaşabiliyorduk bunun aynısını listelerde yapabiliriz kesinlikle ve mantık tamamen aynıdır.
+
+list1 = [1,2,3]
+print(list1[0]) #ekrana bize 0. indeksteki yani 1 sayısını döndürür.
+
+peki akıllarda bir soru var hocam iç içe listelerde nasıl yapacağız bunu hımmm düşünelim şimdi eğer listede ki indeksi öğrenmek için [] bunun içine değer atıyorsak o değere
+ulaşıyorsak yanına [] bir tane daha koyup o listenin indexine ulaşmış oluruz sanırım hadi gelin deneyelim.
+
+Örnek:
+list4 = [[1,2,3],[4,5,6],[7,8,9],10] #Bu listeden ekrana 6 rakamını yazdıran kodu yazınız ??
+print(list4[1][2]) işte bu kadar ilk önce 1.indexe gidiyoruz kapıyı açıyoruz içeri gidiyoruz ve 2.olanı seçiyoruz işte bu kadar basit :)
+
+Liste elemanlarına döngüler ile erişim:
+liste elemanlarına döngü ile erişim burada size mantığını anlatmak istiyorum döngü kullanımını size döngüler kısmında anlatıcağım.
+
+Liste elamanlarına indeks numaraları ile nasıl erişebileceğimizi öğrendik ancak her bir elemana indeks numarası ile tek tek ulaşmak bazen zor olabilir
+dolayısıyla liste elemanlarına bazen döngü ile ulaşmak isteriz.
+
+söz dizimi şu şekilde 
+list5 = ['ahmet','mehmet','cenk']
+for name in list5:
+   print(name)
+  
+Burada 3 elemanlı names listesi içindeki her bir eleman sırasıyla name değişkeni içerisine kopyalanır ve print() metodu ile ekrana yazdırılır. 
+
+şimdi ki konumuz liste parçalama stringlerden hatırlarsınız tamamen aynı mantık ile 
+
+Liste Parçalama:
+Listelerde ki belirli aralıkta ki elemanları seçmek için kullandığımız bir teknik [start:stop:step] şeklinde yazarız.
+
+list6 = [1,2,3,4,5,6,7,8,9]
+print(list6[0:3:1]) #burada dedik ki 0.indexten başla 3.indexe kadar teker teker al bana göster dedik sonuç = 1 2 3 ekrana yazdırılır.
+print(list6[0:3]) #eğer adım belirtmezsek otomatik olarak 1 kabul eder yani yine 1 2 3 ekrana yazar.
+print(list6[:2]) #eğer başlangıç belirtmezsek otomatik olarak en baştaki yani 0.indexten başlar belirtilene kadar ilerler sonuç = 1 2 olur.
+print(list6[2:]) #eğer stop ve step adımlarını belirtmezsek 2den başlayıp sonuna kadar gitmesini söylemiş oluruz sonuç =  3 4 5 6 7 8 9 diye ekrana yazdırılır.
+print(list6[-3:-1]) # eğer tersten başlamasını istersek eksi değerleri gireriz -3'ten başla -1'e kadar git demiş oluruz.
+print(list6[::]) #eğer hiç bir değer girmezsek en baştan sona kadar sırayla git demiş oluruz.
+
+Liste elemanlarını güncelleme:
+Liste elemanlarını güncellemek istediğimizde ilk olarak elemanı seçmemiz gerekiyor.
+
+list7 = [1,2,3]
+list7[1] = "Boran"
+print(list7) #ekrana [1,"Boran",3] yazdırır böylece istediğimiz indexte ki değeri güncellemiş oluruz.
+
+Bu dersimiz bu kadar arkadaşlar sırada ki dersimiz de Tuple türünü görüceğiz bir sonra ki derste görüşmek üzere kendinize iyi bakın sağlıklı günler dilerim :)(:
+
