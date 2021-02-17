@@ -1,0 +1,50 @@
+Merhaba arkadaşlar hoşgeldiniz umarım iyisinizdir. Bugün sizlerle birlikte tuple listelerini işleyeceğiz özelliklerini öğreniceğiz hadi başlayalım.
+
+Tuple:
+Tuple listeleri, list'e benzer fakat ancak farkları tuple içindeki elemanları değiştiremeyiz yani ekleme,silme ve güncelleme yapamayız.
+Tuple parantez ile oluşturulur.
+
+tuple1 = ("Boran","Oktay","Dabak")
+print(tuple1) #ekrana ("Boran","Oktay","Dabak") yazıcaktır.
+
+Tuple liste elemanlarını güncelleme: 
+peki ya tuple listelerinde değer değiştirmek veya güncellemek istersek o zaman ne yapmamız gerekiyor ?? hımm hatırlarsanız veri tipi dönüştürme konusunu işlemiştik işte burada 
+aynısını yapıcağız tuple liste türünü başka bir liste türüne dönüştürüp işlemlerimizi yapıp sonra geri çeviriceğiz.
+
+x = ("Boran","Oktay","Dabak") #elimizde tuple listesinin 0.indexinde ki değeri değiştirmek istersek eğer
+y = list(x) #ilk önce bir değişken yaratıp tuple listesinin aynısını list halinde yazmasını istiyoruz içine yani y değeri şunu almış oldu aslında şuan ["Boran","Oktay","Dabak"]
+y[0] = "Merhaba" #artık list değer oluşturduğumuza göre istediğimiz gibi ekleme çıkarma güncelleme yapabiliriz burada 0.indexte ki değeri Boran yerine Merhaba yaptık.
+x = tuple(y) #en son olarak x değişkeni içerisini y'nin list hali yerine tuple list halini geçirdik ve böylece tuple listimizi güncellemiş olduk 
+biraz göz korkutucu duruyor olabilir ama emin olun aşırı basit tek yapmanız gereken mantığını anlamak :) Her zaman bu tür konularda tavsiyem bulmaca gibi düşünün faydasını mutlaka
+görüceksiniz :)
+
+print(x) #ekrana ("Merhaba","Oktay","Dabak") yazıcaktır.
+
+Tuple Elemanlarına Erişim:
+Python tuple listelerindeki her bir elemanına soldan itibaren 0' dan başlayarak indeks numarası ile ulaşabiliriz. Aynı şekilde sağdan -1. indeks numarasından başlamalıyız.
+
+Örneğin:
+message = ('Hello', 'There.', 'My', 'name', 'is', 'Boran', 'Dabak')
+
+print(message[2])   # My
+print(message[4])   # is
+print(message[-1])  # Dabak
+print(message[-3])  # is
+
+Tuple listesinden bir aralık seçmek istediğimizde ise slicing yöntemini yani parçalama kullanabiliriz.
+
+message = ('Hello', 'There.', 'My', 'name', 'is', 'Boran', 'Dabak')
+print(message[0:2])  # ('Hello', 'There.')
+print(message[-3:-1])  # ('is', 'Boran')
+
+Tuple Elemanlarına Döngü ile Erişim:
+Tuple elamanlarına indeks numaraları ile nasıl erişebileceğimizi öğrendik ancak her bir elemana indeks numarası ile tek tek ulaşmak bazen zor olabilir dolayısıyla 
+liste elemanlarına bazen döngü ile ulaşmak isteriz.
+
+Örneğin:
+names = ('ahmet','mehmet','cenk')
+for name in names:
+   print(name)
+
+Evet arkadaşlar tuple listeleri bu kadar bir sonra ki dersimizde sizlerle beraber sets'leri işleyeceğiz 
+bir sonraki derste görüşmek üzere kendinize iyi bakın sağlıklı günler dilerim :)(:
