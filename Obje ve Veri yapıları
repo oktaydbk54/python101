@@ -1,0 +1,145 @@
+Merhabalar bu dersimizde sizlerle Python en temellerinden olan bir konuyu işleyeceğiz...
+
+ilk önce Sayı veri tiplerini görelim başlangıç olarak.
+
+Sayı veri tipleri: Pythonda iki tür temel sayı tipi vardır bunlar integer(int) ve float.
+
+int tipi tam sayı veri tipidir, float tipi ise ondalıklı virgüllü sayılar için kullandığımız tiplerdir.
+
+int örneği olarak = 2+2=4 verir
+float örneği olarak = 2.0+2.0=4.0 verir 
+
+!!NOT!! = PYTHONDA VİRGÜLLÜ SAYILARI NOKTA İLE GÖSTERİRİZ VİRGÜL VEYA BAŞKA BİR İŞARET NOKTASI KULLANILAMAZ.
+
+!!NOT!! = EĞer verilen bir sayının tipini bilmiyorsanız ama öğrenmek istiyorsanız type() fonksiyonu içerisine yazdığınız zaman size çıktı olarak ne tür olduğunu söyler.
+
+şimdi matematiksel operatörler kısmına bakalım aslında hemen hemen aynı diyebiliriz sadece ufak ekstra bir kaç işlem daha var o kadar arkadaşlar
+
+toplama = + işareti ile gösterilir = Örnek 2 + 2 = 4
+çıkarma = - işareti ile gösterilir = Örnek 4 - 2 = 2
+çarpma = * işareti ile gösterilir = Örnek 2 * 8 = 16
+bölme = / işareti ile gösterilir = Örnek 4 / 2 = 2
+Mod alma = % işareti ile gösterilir = Örnek 15 % 2 = 1 !! Merak etme birazdan açıklayacağım ama eğer ilk bakışta anlamadıysan bir tık daha dikkatli bak :)
+üs alma = ** işareti ile gösterili = Örnek 2 ** 3 = 8
+kalansız bölme = // işareti ile gösterilir = 15 // 2 = 7
+
+Mod alma = aslında bölme işleminde ki bize kalan sayıyı öğrenmek için kullanırız bunu ilk başta nerede kullanıcağız ne işimize yarıcak derseniz döngüler kısmında bunu bolca örneklerle
+kullanıcağız merak etmeyin. :)
+
+şimdi sizlerle veri tipleri dönüşümleri nasıl yapılır biraz onu inceleyelim...
+
+bazen python kodlarımızı yazarken bir veri tipini başka veri tipine dönüştürmeye ihtiyaçımız olabilir ve bu ihtiyaçımız ortaya çıktığı zaman bu methodları kullanıcağız.
+
+size bir örnekle anlatmak istiyorum diyelim ki kullanıcıdan 2 tane sayı girmesini istedik ve farklı bir değişkene bu 2 sayıyı ekleyip sonuçu yazdırmak istedik ama sayıları kullanıcıdan
+istersen ne tür olduğunu belirtmeyi unuttuk bunu nasıl düzeltebiliriz.
+
+sayı1 = input("Lütfen ilk sayıyı giriniz: ")
+sayı2 = input("Lütfen ikinci sayıyı giriniz: ")
+
+#bu iki sayının toplamını yazdırmak için farklı bir değişkene atama yaptık
+toplam = sayı1+sayı2 
+print(toplam)
+
+diye yazdırmak istersek sonuç istediğimiz gibi olmayacaktır çünkü burada biz burada sayı1 ve sayı2 değişkenlerine integer değer olduğunu söylemedik ve onlarda normal yazı olarak sandılar
+yani yukarıda ki işleme göre sayı1'e 10 değerini sayı2 değerine 30 değerini atamış olsaydık ve toplam değişkenini yazdırmak isteseydik ekrana 1030 yazdırırdı yazı türü halinde.
+
+hımm peki bu sorunu nasıl düzeltebiliriz düşünelim şu ana kadar neler öğrendik sayıların türlerini öğrendik int ve float o zaman ufak bir oynama ile düzeltebiliriz
+
+toplam = int(sayı1)+int(sayı2) veya toplam = float(sayı1)+float(sayı2) diye ufak bir değişken belirtmesi yaparsak sorun düzelir ve ekrana 40 veya 40.0 değerini yazdırmış olur.
+
+bu yaptığımız işlem girilen bilginin yazı türünden sayı türüne dönüştürülmesidir peki tam tersini yapabilir miyiz düşünelim ??
+
+kesinlikle yapabiliriz tek yapmamız gereken değişken atamalarını yaptığımız sırada istediğimiz türleri başlarına yazmak yeterli olucaktır.
+Örneğin:
+
+toplam = str(sayı1)+str(sayı2)
+
+buda int değerini string değerine dönüştürme denir.
+
+gelelim bir sonra ki konumuza şimdi String tanımlama aslında bu konuya az biraz değinmiştik.
+
+Python'da string veri tipleri tek tırnak veya çift tırnak ile oluşturulur.
+
+print("Hello World") ile print('Hello World') yazdırmak arasında hiç bir fark yoktur.
+
+ama genellikle çift tırnak ilk başlarda kullanılmasını daha çok tavsiye ediyorum.
+
+birden fazla satırda string tanımlaması yapmak istersen diyelim ki programımızda şarkı sözleri bulunan veya bir şiir bulunan değişken var bu değişkeni string olarak atamak için
+""" """ üç tırnak kullanırız.
+
+stringleri kendi aralarında birbirlerine ekleyebiliriz buna bir çok isim verebilirsiniz tren diyebilirsiniz birleştirme toplama ne isterseniz diyebilirsiniz
+bu işlemi + işareti kullanarak yaparız aynı size ufak bir örnek ile hemen göstereyim.
+
+isim = "Boran Oktay "
+soyisim = "Dabak"
+
+print(isim+soyisim) # Ekrana Boran Oktay Dabak yazdırır.
+
+bazen bunu daha uzun şeyler yazmak için kullanabiliriz ama sürekli farklı değişkenleri yazıp sonrasında + işareti ile yapmak çok fazla vaktimizi alır burada pythonun en büyük
+avantajlarından bir tanesi olan format veya f-string adında seçeneklerimiz var 
+
+format methodu: yazdırmak istediğimiz değişkenleri veya parametreleri .format() parantezi içerisine yazıp oradan bizim yerimize tek tek + işareti ile uğraştırmadan 
+kendi kendine ekleme yaparak kolaylık sağlar.
+
+isim = "Boran Oktay "
+soyisim = "Dabak"
+
+print("Benim adım {} ve soyadım {}".format(isim,soyisim)) #Benim adım Boran Oktay ve soyadım Dabak şeklinde ekrana çıktı yapar.
+
+f-string ile yazdırma : direk sizlere bir örnek ile göstermek istiyorum.
+
+print(f"Benim adım {isim} {soyisim} ") #Benim adım Boran Oktay Dabak şeklinde ekrana çıktı yapar.
+
+burada ekrana yazdırmak istediğimiz cümleden önce başına bir f koyduk başlıktan anlaşılan gibi f-string ilk önce f koyduk sonra string değeri yazdık ve süslü parantezler içerisine
+ne yazdırmak istediğimizi söyledik o da tam olarak istediğimizi ekrana yazdı.
+
+sırada ki hedefimiz ve yeni güzel konumuz STRİNG PARÇALAMA peki string parçalama nedir ne yaparız nerede kullanırız ??
+
+!!!unutmayın bir konuya çalışırken özellikle yazılım konusunda nedenini anlamanız çok önemli çünkü nedenini anlamadığınız bir şeyi tam kapasiteli olarak kullanamazsınız bu her şey için
+geçerli bir kuraldır.
+
+String Parçalama: string veri tipleri aslında bir karakter dizisi olarak adlandırabiliriz peki bu ne demek ? yani aslında bir karakter listesi olarak tanımlanırlar.
+dizilerin her bir karakterine soldan başlarız ve doğal sayılardan başlar yani 0'dan başlar 0 1 2 3 diye gider bu sayılara bu arada index diye sesleniriz
+ve bu istediğimiz rakamlar(index) sayesinde istediğimiz harfe ulaşırız
+hemen size bir örnek vereyim her şey netleşsin sakin olun.
+
+soyisim = "Dabak"
+print(soyisim[0]) #ekrana D harfini verir bu demek oluyor ki soyisimli değişkenin 0.cı indexinde D var diyor bize
+print(soyisim[3]) #ekrana a harfini verir bu sefer unutmayın 0dan saymaya başlıyoruz.
+
+peki bunu tersten yapamaz mıyım ben python diye sorarsanız kesinlikle yapabilirsiniz sayı doğrusunu düşünün 0 dan başlıyorsa sadece + yöne ilerlemiyor aynı zamanda - yöne de ilerler
+bakalım - değer verirsek ekrana ne yazdırıcak.
+
+print(soyisim[-1]) #ekrana k harfini yazdırdı sebebi ise tersten başladığımız zaman tekrar 0dan başlamıyoruz.
+print(soyisim[-3]) #ekrana b harfini yazdırır bu sefer.
+
+peki diyelim ki elimizde sayamayacak kadar uzun bir string değişkenimiz var ve bunun uzunluğınu öğrenmek istiyoruz bunu nasıl yapabilirim ?? 
+işte bu kısımda len() adında bizler için tasarlanmış harika bir metodu kullanarak istedi kadar uzun olsun anında bize uzunluğunu söyler.
+
+print(len(soyisim)) #ekrana 5 sayısını yazdırır ve bize bu değişkenin uzunluğu 5 olduğunu söyler.
+
+parçalama yaparken istediğimiz aralığı belirleyebiliriz yani başlangıç ve bitiş noktalarını biz seçebiliriz hatta ve hatta kaçar kaçar artmasını da söyleyebiliriz.
+Örneğin:
+
+print(soyisim[0:3]) #ekrana Dab yazdırır başlangıçtan başlar ama bitişte ki değeri ekrana yazdırmaz peki neden ?
+sebebi şöyle biz aslında burada 0'dan başla 3'e kadar değerleri bana göster demiş olduk burada ki kadar anlamı olduğu için son değer bize gelmez.
+
+peki kaçar kaçar alıcağını da söyleyelim
+
+print(soyisim[0:4:2]) #ekrana Db yazmış olur çünkü 0'dan başla 4'e kadar git ama ikişer ikişer git demiş olduk o yüzden diğerlerini almadı.
+
+bu dersimiz bu kadar umarım hoşunuza gitmiştir bir sonra ki derste görüşmek üzere kendinize iyi bakın iyi günler dilerim (:(:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
