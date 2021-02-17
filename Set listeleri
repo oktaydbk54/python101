@@ -1,0 +1,81 @@
+Merhaba arkadaşlar dersimize hoşgeldiniz :) bugün sizlerle birlikte set listelerini görüceğiz.
+
+Set:
+set listeleri, liste benzer fakat set içinde ki elemanları sıralayamayız ve indexleyemeyiz. dolayısıyla set'e eklediğimiz bir elemanın set listesi içinde hangi sırada olucağını
+bilemeyiz. Ayrıca set içerisinde ki elemanlar tekrarlanamaz her bir elemandan sadece 1 tane olur tekrarlananlar silinir.
+set listesi oluşturmak için süslü parantez kullanırız {}
+
+meyve = {"banana", "grape", "cherry"}
+print(meyve)  # ekrana yazdırıcaktır {"grape", "banana", "cherry"}
+
+Gördüğünüz gibi listeyi ekrana yazdırdığımızda liste elemanlarının yeri karışık geliyor. Hatta uygulamayı her çalıştırdığınızda bu sıra değişecektir.
+
+Set Elemanlarına Erişim:
+Set elemanlarına indeks numarası verilmediğinden dolayı indeks numarasına göre elemanlara ulaşamayız. Ancak bir döngü yardımıyla ulaşabiliriz. 
+
+meyveler = {"banana", "grape", "cherry"}
+for eleman in meyveler:
+    print(eleman) #ekrana grape banana cherry şeklinde çıktı yapacaktır.
+    
+eğer aradığımız bir eleman set listesinin bir elemanı olup olmadığını kontrol etmek istersek in operatörünü kullanırız.
+
+meyveler = {"banana", "grape", "cherry"}
+print("banana" in fruits) # içerisinde bu değer bulunduğu için True değerini yazar.
+
+!!NOT!! Set listesini eğer bir kere oluşturursak daha sonrasında güncelleme yapamayız maalesef ancak şöyle bir alternatif yol vardır ekleme yapabiliriz.
+
+Set' e Yeni Eleman Ekleme:
+Set listesine tek bir eleman eklemek için add() metodunu, birden fazla eleman eklemek için ise update() metodunu kullanabiliriz.
+
+fruits = {"banana", "grape", "cherry"}
+fruits.add("orange") # {"grape", "banana","orange","cherry"} olucaktır artık.
+
+Set' e birden fazla eleman eklemek için ise;
+
+fruits = {"banana", "grape", "cherry"}
+fruits.update(["orange", "mango"])  # {"orange", "banana", "mango", "grape", "cherry"} olur.
+
+Set Elemanlarını Silme:
+Set' den bir eleman silmek için remove() ya da discard() metodu kullanılabiliriz.
+
+fruits = {"banana", "grape", "cherry"}
+fruits.remove("grape")  # {"banana","cherry"} yeni hali
+
+fruits = {"banana", "grape", "cherry"}
+fruits.discard("grape")  # {"banana","cherry"} olur
+
+!!NOT!! Bir eleman silmek için ayrıca pop() metodunuda kullanabiliriz ancak set listeleri indekslenmediğinden dolayı pop() ile sildiğimiz bir elemanın hangisi olacağını bilemeyiz.
+Dolayısıyla uygulamayı her çalıştırdığımızda set listesinin son elemanı silinir ancak hangi eleman olacağını bilemeyiz.
+
+fruits = {"banana", "grape", "cherry"}
+fruits.pop()  # {"banana","cherry"}
+
+clear() metodu ile set elemanlarının hepsini silebiliriz.
+
+fruits = {"banana", "grape", "cherry"}
+fruits.clear()  # { }
+
+!!NOT!! del komutu ile set listesinin referansını sileriz dolayısıyla set ' e tekrar ulaşmak istediğimizde hata alırız.
+
+fruits= ["banana", "grape", "cherry"] 
+del fruits
+print(fruits) # NameError: name 'fruits' is not defined
+
+Birden Fazla Set Listesini Birleştirme:
+Birden fazla set listesini birleştirmek için kullanabileceğimiz union() ve update() metotları vardır.
+
+set1 = {"a", "b" , "c"}
+set2 = {1, 2, 3}
+
+set3 = set1.union(set2)
+print(set3)  # {"a",1,3,2,"b","c"}
+union() metodu ile birleştirilen set' ler yeni bir set objesiyle geri döner. (set3)
+
+set1 = {"a", "b" , "c"}
+set2 = {1, 2, 3}
+
+set1.update(set2)
+print(set1) # {"a",1,3,2,"b","c"}
+update() metodu ile bir set'i diğer set içerisine eklemiş oluyoruz yeni bir set objesi oluşturulmaz.
+
+Bu dersimiz bu kadardı arkadaşlar bir sonra ki dersimiz de dictionary konusunu işleyeceğiz bir sonra ki dersimizde görüşmek üzere kendinize iyi bakın sağlıklı günler dilerim :)(:
