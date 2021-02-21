@@ -1,0 +1,164 @@
+Merhaba arkadaşlar bu dersimizde sizlerle birlikte Dictionary türü listenin ne olduğunu işlemiş olucağız.
+
+Dictionary: Dictionary sözlük veri yapısı key ve value şeklinde verileri saklayabileceğimiz bir veri yapısıdır. Dictionary veri yapısı Json veri yapısına oldukça benzemektedir.
+
+Dictionary liste elemanlarına key ve value değerlerine göre ulaşıp elemanlar üzerinde güncelleme yapabiliriz.
+
+Örneğin :
+
+ogrenci = {
+  "numara": "123",
+  "ad": "Boran",
+  "soyad": "Dabak"
+}
+
+print(ogrenci)  # { "numara": "123", "ad": "Boran", "soyad": "Dabak" }
+
+burada dictionary listesinin kullanmamızın bir avantajı şudur eğer 2 farklı değer içeren bilgiler varsa bunları karışmadan ulaşmak için 2 farklı listeye ayırıp teker teker ulaşmamız
+gerekir ama burada dictionary kullanırsak direk key üzerinden value'ye tek seferde ulaşırız böylece bizim avantajımız olmuş olur.
+
+Örneğin:
+
+plakalar = { 'kocaeli' : 41, 'istanbul': 34 }
+print(plakalar['kocaeli'])   # 41
+print(plakalar['istanbul'])  # 34
+
+Dictionary Elemanlarına erişim: 
+Dictionary elemanlarına ulaşmanın 2 yolu mevcuttur. 
+Birincisi köşeli parantezler içerisine yazdığımız key ile ulaşabiliriz.
+İkincisi köşeli parantez yerine get() metodunu kullanarak ulaşırız.
+
+ogrenci = {
+  "numara": "123",
+  "ad": "Boran",
+  "soyad": "Dabak"
+}
+print(ogrenci["numara"]) # 123
+print(ogrenci["ad"])     # Boran
+print(ogrenci["soyad"])  # Dabak
+
+veya 
+
+numara = ogrenci.get("numara")
+ad = ogrenci.get("ad")
+soyad = ogrenci.get("soyad")
+
+print(numara,ad,soyad)  # 123 Boran Dabak
+
+şeklinde bu iki yöntem ile ulaşırız.
+
+Dictionary elemanlarına döngü ile erişim: 
+şimdi bu konuda akıllarda bir soru oluşuyor döngülerde tek bir değer üzerinde gitmiyor muydu bunda 2 tane değer var key ve value nasıl olucak şöyle olucak 
+hemen size bir örnekle anlatmak istiyorum.
+
+Örnek:
+user = {
+      username = "bodabak",
+      password = "123456",
+      email = "info@borandabak.com",
+      phone = "0545123456"
+}
+
+for i in user:
+   print(i) # bunun sonucu username, password, email, phone bilgileri alt alta key bilgileri gelecektir.
+   
+eğer ki, value bilgilerini almak istersek user[i] şeklinde her bir elemanın value bilgisini alırız.
+
+for i in user:
+   print(user[i]) #ekrana bodabak 123456 info@borandabak.com 0545123456 yazdırır.
+   
+ya da aynı şekilde value bilgilerini almak için başka bir yol olarak values() ile ulaşabiliriz.
+
+for i in user.values():
+   print(i)
+   
+items() metodu ile hem key hem value bilgilerine ulaşabiliriz.
+
+for a,b in user.items():
+   print(a,b) #bu durumda ekrana tüm bilgiler yazdırılır.
+   
+
+Dictionary Elemanlarını Güncelleme:
+key bilgisini kullanarak ulaştığımız bir elemanın value değerini direk değiştirebiliriz.
+
+Örneğin:
+
+ogrenci = {
+  "numara": "120",
+  "ad": "Boran",
+  "soyad": "Dabak"
+}
+
+ogrenci["numara" ] = 220
+print(ogrenci)  # { "numara": "220", "ad": "Boran", "soyad": "Dabak" }
+
+Dictionary Yeni Eleman Ekleme:
+
+Yeni bir eleman eklemek için olmayan bir key bilgisi eklememiz yeterlidir.
+
+Örneğin:
+
+ogrenci = {
+  "numara": "120",
+  "ad": "Boran",
+  "soyad": "Dabak"
+}
+
+ogrenci["cinsiyet" ] = "E"
+print(ogrenci)  # { "numara": "220", "ad": "Boran", "soyad": "Dabak" ,"cinsiyet":"E"}
+
+Dictionary Eleman silme:
+pop() metodu ile sözlük veri yapısından belirttiğimiz key bilgisi ile veriyi otomatik olarak silebiliriz.
+
+Örneğin:
+
+ogrenci = {
+  "numara": "120",
+  "ad": "Boran",
+  "soyad": "Dabak"
+}
+
+ogrenci.pop("numara")
+print(ogrenci)  # { "ad": "Boran", "soyad": "Dabak" ,"cinsiyet":"E"} #şeklinde yazılır.
+
+aynı şekilde del komutu ile de yapabiliriz ama bunda şöyle bir risk var eğer del içerisinde bir key vermezsek tüm dictionary(sözlük) silinebilir.
+Eğer ki dictionary'de bütün elemanları silmek istiyorsak clear() metodunu kullanabiliriz.
+
+İç içe Dictionary Tanımlama:
+Tanımlanan bir sözlük verisini başka bir liste elemanı içerisine alabileceğimiz gibi bir başka sözlük verisi de içine yazabiliriz.
+
+Örneğin:
+users = {
+    'BoranDabak': {
+        'age': 2,        
+        'roles': ['user'],
+        'email': 'boran@gmail.com',
+        'address': 'istanbul',
+        'phone': '1231321'
+    },
+    'BerkanYılmaz': {
+        'age': 2,
+        'roles': ['admin','user'],
+        'email': 'berkan@gmail.com',
+        'address': 'sakarya',
+        'phone': '1231321'
+    }
+}
+
+burada users objesi 2 elemanı vardır.
+
+print(users['BerkanYılmaz']) #ekrana { 'age': 2, 'roles': ['admin','user'], 'email': 'berkan@gmail.com', 'address': 'sakarya', 'phone': '1231321' } yazıcaktır.
+
+Gördüğümüz gibi 'BerkanYılmaz' ya da 'BoranDabak' ile içteki her bir sözlük verisine ulaşabiliriz ve ulaştığımız 2 sözlük veri yapısı içinde de diğer elemanlara ulaşmak için ise;
+
+print(users['BerkanYılmaz']['age']) #ekrana 2 bilgisini yazdırır.
+
+
+bu dersimiz bu kadardı arkadaşlar bir sonra ki derste görüşmek üzere kendinize iyi bakın sağlıcakla kalın iyi günler dilerim :)(:
+
+
+
+
+
+
+
